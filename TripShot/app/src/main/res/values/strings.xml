@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TripShot</string>
+
+    <string-array name="trips">
+        <item>Italy</item>
+        <item>Greece</item>
+        <item>Spain</item>
+        <item>Germany</item>
+        <item>USA</item>
+        <item>Bulgaria</item>
+        <item>Romania</item>
+        <item>Croatia</item>
+        <item>France</item>
+        <item>Canada</item>
+        <item>Australia</item>
+    </string-array>
+</resources>
