@@ -46,7 +46,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         userID = user.getUid();
 
         final TextView greetingTextView = findViewById(R.id.greeting);
-        final TextView emailTextView = findViewById(R.id.emailAddress);
+
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -56,8 +56,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 if (userProfile != null) {
                     String email = userProfile.email;
 
-                    greetingTextView.setText("Welcome, " + email + "!");
-                    emailTextView.setText(email);
+                    //greetingTextView.setText("Welcome, " + email + "!");
+                    greetingTextView.setText("Welcome, Anca!");
+
                 }
             }
 

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/memory_card"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/additionalColor"
+    app:cardCornerRadius="15dp"
+    app:contentPadding="5dp"
+    app:cardElevation="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/memory_mainLayout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/itemImage"
+            android:src="@drawable/add_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+
+        <Button
+            android:id="@+id/addimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/itemImage"
+            android:text="Choose from gallery"
+            android:textStyle="bold"
+            android:textSize="17sp"
+        />
+
+        <EditText
+            android:id="@+id/memory_title"
+            android:layout_margin="5dp"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:hint="Enter Title"
+            android:textColor="@color/primary"
+            app:layout_constraintTop_toBottomOf="@+id/addimage"
+            app:layout_constraintLeft_toLeftOf="@+id/itemImage"
+            android:paddingBottom="5dp"
+            />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_margin="5dp"
+            android:text="23.06.21"
+            android:textColor="@color/secondary"
+            app:layout_constraintTop_toBottomOf="@+id/addimage"
+            app:layout_constraintRight_toRightOf="@+id/itemImage"
+            android:paddingBottom="8dp"
+            />
+
+        <ScrollView
+            android:id="@+id/childScroll"
+            android:layout_width="364dp"
+            android:layout_height="284dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/memory_title">
+
+<!--            <TextView-->
+<!--                android:id="@+id/caption"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:text="There are some truly amazing works of art - the detail in the Flemish paintings is breathtaking, Stubbs' Whistlejacket takes the breath away every time, the Impressionists always please and Delaroche's The Execution of Lady Jane Grey might even bring a tear to the eye.There are some truly amazing works of art - the detail in the Flemish paintings is breathtaking, Stubbs' Whistlejacket takes the breath away every time, the Impressionists always please and Delaroche's The Execution of Lady Jane Grey might even bring a tear to the eye."-->
+<!--                android:textColor="@color/primary"-->
+<!--                android:textSize="20sp"-->
+<!--                android:textStyle="italic"-->
+<!--                app:layout_constraintLeft_toLeftOf="@+id/itemImage"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/memory_title" />-->
+            <EditText
+                android:id="@+id/caption"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Enter memory description"
+                android:layout_margin="5dp"
+                android:textColor="@color/primary"
+                android:textSize="20sp"
+                android:textStyle="italic">
+
+            </EditText>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
+            android:text="Save"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/childScroll"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

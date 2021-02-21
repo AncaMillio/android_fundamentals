@@ -2,6 +2,7 @@ package com.anca.tripshot;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +12,21 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
+import static android.content.Context.MODE_PRIVATE;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-    private String[] data;
+    private ArrayList<String> data = new ArrayList<>();
     Context context;
 
-    public MyAdapter(Context context, String[] s) {
+
+    public static final String PREFS_NAME = "MyApp_Settings";
+
+    public MyAdapter(Context context, ArrayList<String> list) {
         this.context = context;
-        data = s;
+        data = list;
     }
 
     @NonNull
@@ -32,13 +40,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.text.setText(data[position]);
+        holder.text.setText(data.get(position));
 
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, AlbumActivity.class);
-                intent.putExtra("data", data[position]);
+                intent.putExtra("data", data.get(position));
                 context.startActivity(intent);
             }
         });
@@ -46,7 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return data.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
@@ -58,6 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             super(itemView);
             text = itemView.findViewById(R.id.trip);
             mainLayout = itemView.findViewById(R.id.mainLayout);
+
         }
     }
 }

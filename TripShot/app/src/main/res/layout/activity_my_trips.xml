@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,6 +12,83 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="140dp" />
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:id="@+id/activityTitle"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="My Trips"
+        android:textSize="40dp"
+        android:gravity="left|center"
+        android:paddingLeft="10dp"
+        android:background="@color/primary"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        />
+
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:backgroundTint="#c29393"
+        android:layout_margin="8dp"
+        android:elevation="16dp"
+        android:text="Logout"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/addTrip"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:text="Add"
+        android:elevation="16dp"
+        android:layout_margin="8dp"
+        android:textSize="25sp"
+        android:backgroundTint="@color/secondary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+<!--    <EditText-->
+<!--        android:id="@+id/tripTitle"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        android:textSize="20sp"-->
+<!--        android:inputType="text"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/addTrip" />-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/titleField"
+        android:layout_width="238dp"
+        android:layout_height="73dp"
+        android:layout_margin="8dp"
+        android:hint="@string/trip_title"
+        app:layout_constraintBottom_toBottomOf="@+id/addTrip"
+        app:layout_constraintEnd_toStartOf="@+id/addTrip"
+        app:layout_constraintTop_toTopOf="@+id/addTrip"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#faf6f0"
+            android:ems="10"
+            android:textSize="25sp"
+            tools:ignore="MissingConstraints" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
